@@ -1,0 +1,13 @@
+*.class
+*.jar
+.idea
+uploads
+# Eclipse IDE
+.classpath
+.project
+.settings/
+
+# Spring Boot
+target
+target/
+!.mvn/wrapper/maven-wrapper.jar

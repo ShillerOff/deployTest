@@ -1,0 +1,8 @@
+<config>
+	<context-values>
+	</context-values>
+	<macro-library>
+		<entry namespace="common" path="src/main/resources/templates/parts/common.ftl" project="verum" type="file"/>
+		<entry namespace="greeting" path="src/main/resources/templates/parts/greeting.ftl" project="verum" type="file"/>
+	</macro-library>
+</config>
