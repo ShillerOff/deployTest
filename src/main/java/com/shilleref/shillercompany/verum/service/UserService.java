@@ -27,7 +27,7 @@ public class UserService implements UserDetailsService{
 	@Value("${approve.link}")
 	private String linkToApprove;
 	
-	@Autowired
+	@Autowired(required = true)
 	private UserRepo userRepo;
 	
 	@Autowired

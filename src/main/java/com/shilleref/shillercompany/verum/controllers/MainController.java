@@ -27,7 +27,7 @@ import com.shilleref.shillercompany.verum.entity.User;
 @Controller
 public class MainController {
 	
-	@Autowired
+	@Autowired(required = true)
 	MessageRepository messageRepo;
 	
 	@Value("${upload.path}") // Spring будет искать переменную upload.path, а она хрантися в application.properties
