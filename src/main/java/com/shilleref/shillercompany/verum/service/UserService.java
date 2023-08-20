@@ -77,7 +77,7 @@ public class UserService implements UserDetailsService{
                             "Welcome to Verum. Please, visit next link: "
                             + "http://%s/activate/%s"
 							, user.getUsername()
-//							,hostname
+							,hostname
 							, user.getActivasionCode());
 			
 			
