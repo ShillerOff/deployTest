@@ -75,7 +75,7 @@ public class UserService implements UserDetailsService{
 			String message = String.format(
 					"Hello, %s! \n" +
                             "Welcome to Verum. Please, visit next link: "
-                            + "http://%s:8080/activate/%s"
+                            + "http://%s/activate/%s"
 							, user.getUsername()
 							,hostname
 							, user.getActivasionCode());
