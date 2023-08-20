@@ -24,8 +24,11 @@ import com.shilleref.shillercompany.verum.entity.User;
 @Service
 public class UserService implements UserDetailsService{
 	
-	@Value("${approve.link}")
-	private String linkToApprove;
+//	@Value("${approve.link}")
+//	private String linkToApprove;
+	
+	@Value("${hostname}")
+	private String hostname;
 	
 	@Autowired(required = true)
 	private UserRepo userRepo;
@@ -71,8 +74,10 @@ public class UserService implements UserDetailsService{
 		if(!StringUtils.isEmpty(user.getEmail())) {
 			String message = String.format(
 					"Hello, %s! \n" +
-                            "Welcome to Verum. Please, visit next link: " + linkToApprove
+                            "Welcome to Verum. Please, visit next link: "
+                            + "http://%s:8080/activate/%s"
 							, user.getUsername()
+							,hostname
 							, user.getActivasionCode());
 			
 			
