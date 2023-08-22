@@ -113,7 +113,7 @@ public class MainController {
 		
 		model.addAttribute("messages", messages);
 		
-		return "main";
+		return "redirect:/main";
 		
 	}
 	
