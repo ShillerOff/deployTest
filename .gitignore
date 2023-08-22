@@ -1,13 +1,14 @@
 *.class
 *.jar
 .idea
-uploads
+# uploads
 # Eclipse IDE
 .classpath
 .project
 .settings/
 
 # Spring Boot
-target
-target/
+# target
+# target/
 !.mvn/wrapper/maven-wrapper.jar
+/target/

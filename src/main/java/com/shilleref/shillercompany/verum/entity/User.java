@@ -1,6 +1,7 @@
 package com.shilleref.shillercompany.verum.entity;
 
 import java.util.Collection;
+import java.util.Objects;
 import java.util.Set;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -28,11 +29,33 @@ public class User implements UserDetails{
 	@Enumerated(EnumType.STRING)
 	private Set<Role> roles;
 	
+	@OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private Set<Message> messages;
+	
 	@NotBlank(message = "Email cannot be empty")
 	@Email(message = "Email is not correct")
 	private String email;
 	private String activationCode;
 	
+	
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return Objects.equals(id, other.id);
+	}
+
 	public boolean isAdmin() {
 		return roles.contains(Role.ADMIN);
 	}
@@ -104,6 +127,16 @@ public class User implements UserDetails{
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
+	
+	
+	
+	public Set<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(Set<Message> messages) {
+		this.messages = messages;
+	}
 
 	public String getEmail() {
 		return email;
@@ -111,6 +144,16 @@ public class User implements UserDetails{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	
+	
+	public String getActivationCode() {
+		return activationCode;
+	}
+
+	public void setActivationCode(String activationCode) {
+		this.activationCode = activationCode;
 	}
 
 	public String getActivasionCode() {
